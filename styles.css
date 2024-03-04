@@ -1,5 +1,5 @@
 body {
-    background-color:darkslategray;
+    background-color:darkgray;
     font-family:Arial, sans-serif;
     margin:0;
     padding:0;
@@ -15,7 +15,7 @@ header {
 }
 
 section {
-    background-color: mediumslateblue;
+    background-color: aliceblue;
     margin-bottom: 20px;
     padding:20px;
     border-radius: 5px;
