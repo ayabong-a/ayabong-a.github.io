@@ -40,3 +40,34 @@ img{
     height: 100px;
     object-fit: scale-down;
 }
+
+header{
+    position:relative;
+    z-index: 1000;
+}
+nav{
+    position:fixed;
+    top:0;
+    left: 0;
+    width:100%;
+    color:darkcyan;
+    overflow: hidden;
+    z-index: 1001;
+    background-color:darkslategrey;
+}
+nav a {
+    display: block;
+    float: left;
+    color:darkcyan;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+}
+nav a:hover {
+    color:cadetblue;
+}
+.content {
+    margin-top: 60px;
+    padding: 20px;
+}
+
