@@ -24,6 +24,11 @@ header {
   text-align: center;
 }
 
+header h1 {
+  font-size: 2em;
+  font-stle: italic;
+}
+
 section {
   margin-bottom: 20px;
   padding: 20px;
@@ -103,4 +108,13 @@ nav a:hover {
 
 .skill-grid a img:hover {
   transform: scale(1.1);
+}
+
+p {
+  font-family: monospace;
+}
+
+div p {
+  font-size: larger;
+  font-weight: bold;
 }
