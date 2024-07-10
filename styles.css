@@ -19,14 +19,14 @@ body::before {
 }
 
 header {
+  text-align: center;
   color: #fff;
   padding: 20px;
-  text-align: center;
 }
 
 header h1 {
   font-size: 2em;
-  font-stle: italic;
+  font-style: italic;
 }
 
 section {
@@ -117,4 +117,42 @@ p {
 div p {
   font-size: larger;
   font-weight: bold;
+}
+
+#contact {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2{
+  margin-bottom: 20px;
+}
+
+#contact form {
+  margin-top: 20px;
+}
+
+#contact form div {
+  margin-bottom: 15px;
+}
+
+#contact form label {
+  display:block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#contact form input, #contact form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing:border-box;
+  background-color: #eaeef3;
+  font-style: italic;
+}
+
+#contact form button:hover{
+  background-color: #4a5e75;
 }
