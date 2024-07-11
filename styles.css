@@ -125,34 +125,50 @@ div p {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#contact h2{
+#contact h2 {
   margin-bottom: 20px;
 }
 
-#contact form {
-  margin-top: 20px;
+form {
+  max-width: 33%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
 }
 
-#contact form div {
+form div {
   margin-bottom: 15px;
 }
 
-#contact form label {
-  display:block;
+form label {
+  display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-#contact form input, #contact form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing:border-box;
+  box-sizing: border-box;
   background-color: #eaeef3;
   font-style: italic;
+  font-size: 15px;
 }
 
-#contact form button:hover{
+form button {
+  padding: 10px 20px;
+  color: black;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #a8c0db;
+  font-weight: bold;
+}
+
+form button:hover {
   background-color: #4a5e75;
 }
