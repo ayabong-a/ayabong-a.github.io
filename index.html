@@ -10,6 +10,8 @@
     </head>
     <body>
         <header id="home">
+            
+            <img src = "images/me.jpeg" alt="A picture of me">
             <h1><h1>
             <p>Hi there, I'm Ayabonga.</p>
         </header>
@@ -78,18 +80,19 @@
                     <legend>Find me below:</legend><a href="https://web.facebook.com/ayabonga.mtsolo/" target="_blank"><img src ="images/facebook-image.avif"  alt="My facebook acoount" style="width:90px; height:90px"></a>
                 </p>
 
-                <form action="submit_form.php" method="post">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="6085196c-cf23-461f-9f76-1458f507bd2a">
                     <div>
                         <label for="name">Name:</label>
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" placeholder="Your name" required>
                     </div>
                     <div>
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" placeholder="Your email" required>
                     </div>
                     <div>
                         <label for="message">Message:</label>
-                        <textarea id="message" name="message" row="4" required></textarea>
+                        <textarea id="message" name="message" row="4" placeholder="Type a message" required></textarea>
                     </div>
                     <div>
                         <button type="submit">Send</button>
