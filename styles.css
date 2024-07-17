@@ -19,14 +19,11 @@ body::before {
 }
 
 header {
+  position: relative;
+  z-index: 1000;
   text-align: center;
   color: #fff;
   padding: 20px;
-}
-
-header h1 {
-  font-size: 2em;
-  font-style: italic;
 }
 
 header img {
@@ -50,12 +47,18 @@ ul {
 }
 
 footer {
-  background-color: darkgrey;
   color: #fff;
   text-align: center;
   padding: 10px;
-  bottom: 0;
-  width: 100px;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 #skills img {
@@ -64,10 +67,6 @@ footer {
   object-fit: scale-down;
 }
 
-header {
-  position: relative;
-  z-index: 1000;
-}
 nav {
   position: fixed;
   top: 0;
@@ -119,7 +118,8 @@ nav a:hover {
   transform: scale(1.1);
 }
 
-p {
+p,
+header h1 {
   font-family: monospace;
 }
 
