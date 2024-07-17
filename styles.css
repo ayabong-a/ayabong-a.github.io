@@ -188,7 +188,7 @@ form button:hover {
   }
 }
 
-@media (min-width: 1024) {
+@media (min-width: 1024px) {
   .content {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -200,9 +200,11 @@ form button:hover {
     display: block;
     text-align: left;
   }
-}
 
-@media (max-width: 768px) {
+  .content{
+    margin-top: 80px;
+  }
+
   form {
     max-width: 100%;
     padding: 10px;
