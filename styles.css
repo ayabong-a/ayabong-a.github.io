@@ -209,10 +209,22 @@ form button:hover {
     max-width: 100%;
     padding: 10px;
   }
+
+  header img {
+    max-width: 30%;
+  }
 }
 
 @media (max-width: 600px) {
   .skill-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .content {
+    margin-top: 100px;
+  }
+
+  header img {
+    max-width: 50%;
   }
 }
