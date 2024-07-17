@@ -214,7 +214,7 @@ form button:hover {
   }
 
   header img {
-    max-width: 50%;
+    max-width: 100%;
     height: auto;
   }
 }
@@ -229,7 +229,7 @@ form button:hover {
   }
 
   header img {
-    max-width: 70%;
+    max-width: 100%;
     height: auto;
   }
 }
