@@ -77,6 +77,7 @@ nav {
   z-index: 1001;
   background-color: darkslategrey;
 }
+
 nav a {
   display: block;
   float: left;
@@ -85,9 +86,11 @@ nav a {
   text-align: center;
   padding: 5px;
 }
+
 nav a:hover {
   color: cadetblue;
 }
+
 .content {
   display: grid;
   grid-template-columns: 1fr;
@@ -201,7 +204,7 @@ form button:hover {
     text-align: left;
   }
 
-  .content{
+  .content {
     margin-top: 80px;
   }
 
