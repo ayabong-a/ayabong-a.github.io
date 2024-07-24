@@ -23,7 +23,7 @@ body::before {
 }
 
 .home {
-  z-index: 1000;
+  z-index: 10;
   text-align: center;
   color: #fff;
   padding: 20px;
@@ -80,13 +80,16 @@ nav {
   color: darkcyan;
   overflow: hidden;
   z-index: 10;
+  padding: 10px 20px;
+  box-sizing: border-box;
   background-color: darkslategrey;
 }
 
 .nav-list {
   display: flex;
-  margin: 2px;
+  margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 nav ul li {
@@ -109,6 +112,7 @@ nav a:hover {
 .content {
   display: flex;
   flex-wrap: wrap;
+
   justify-content: space-between;
   margin-top: 60px;
   padding: 20px;
@@ -206,23 +210,46 @@ form button:hover {
   .content {
     flex: 1 1 calc(50% - 20px);
   }
+
+  #home img {
+    min-width: 15%;
+  }
+
 }
 
 @media (min-width: 1024px) {
   .content {
     flex: 1 1 calc(33% - 40px);
   }
+
+  #home img {
+    max-width: 15%;
+  }
+
 }
 
 @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
   nav a {
     float: none;
     display: block;
-    text-align: center;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
   }
 
   .content {
-    margin-top: 80px;
+    margin-top: 100px;
     flex-direction: column;
   }
 
@@ -236,7 +263,7 @@ form button:hover {
   }
 
   .home img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
   }
 }
@@ -246,12 +273,8 @@ form button:hover {
     flex-direction: column;
   }
 
-  .content {
-    margin-top: 100px;
-  }
-
   .home img {
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
   }
 
