@@ -10,18 +10,40 @@
 
 <body>
   <nav>
-    <ul class="nav-list">
+
+    <ul class="sidebar">
+      <li onclick=hidesideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+            viewBox="0 -960 960 960" width="24px" fill="white">
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+          </svg></a></li>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About me</a></li>
       <li><a href="#education">Education </a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#contact">Contact</a></li>
       <li>
         <a href="https://drive.google.com/file/d/1KW-j8JVAfND8OjPRp0muOjRPS7SJ-v3U/view?usp=sharing"
           target="_blank">CV</a>
       </li>
+    </ul>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li class="hideOnMobile"><a href="#about">About me</a></li>
+      <li class="hideOnMobile"><a href="#education">Education </a></li>
+      <li class="hideOnMobile"><a href="#skills">Skills</a></li>
+      <li class="hideOnMobile"><a href="#portfolio">Portfolio</a></li>
+      <li class="hideOnMobile"><a href="#contact">Contact</a></li>
+      <li class="hideOnMobile">
+        <a href="https://drive.google.com/file/d/1KW-j8JVAfND8OjPRp0muOjRPS7SJ-v3U/view?usp=sharing"
+          target="_blank">CV</a>
+      </li>
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+            viewBox="0 -960 960 960" width="24px" fill="white">
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+          </svg></a></li>
     </ul>
   </nav>
   <div class="home">
@@ -64,11 +86,6 @@
       <img src="images/python-image.jpg" alt="office" />
       <img src="images/html-css.png" alt="html and css" />
       <img src="images/js.jpg" alt="javascript" />
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <p>No particular experience.</p>
     </section>
 
     <section id="portfolio">
@@ -120,6 +137,18 @@
   <div class="footer-container">
     <footer>&copy; 2024 Ayabonga</footer>
   </div>
+
 </body>
+<script>
+  function showSidebar() {
+    const sidebar = document.querySelector(".sidebar")
+    sidebar.style.display = "flex"
+  }
+
+  function hidesideBar() {
+    const sidebar = document.querySelector(".sidebar")
+    sidebar.style.display = "none"
+  }
+</script>
 
 </html>
