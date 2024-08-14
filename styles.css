@@ -281,8 +281,8 @@ form button:hover {
     padding: 10px;
   }
 
-  .home img {
-    max-width: 50%;
+  #home img {
+    max-width: 20%;
     height: auto;
   }
 
@@ -295,17 +295,25 @@ form button:hover {
   }
 }
 
+@media (max-width: 500px) {
+  #home img {
+    max-width: 50%;
+    height: auto;
+  }
+}
+
 @media (max-width: 400px) {
   .skill-grid {
     flex-direction: column;
   }
 
-  .home img {
-    max-width: 70%;
-    height: auto;
-  }
-
   .content section {
     flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 300px) {
+  #home img {
+    max-width: 100%;
   }
 }
