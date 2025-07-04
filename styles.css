@@ -357,3 +357,86 @@ body {
     transition: opacity 0.3s ease;
     z-index: -1;
 }
+
+.bottom-section {
+    padding: 8rem 0;
+}
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+}
+
+.interests {
+    padding: 3rem;
+}
+
+.contact {
+    padding: 3rem;
+}
+
+.interests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.interest-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.1rem;
+    padding: 1.5rem;
+    background: var(--glass-bg);
+    border: 1px splid var(--glass-border);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.interest-icon {
+    font-size: 1.75rem;
+    filter: grayscale(0.3);
+    transition: filter 0.3s ease;
+}
+
+.interest-item:hover .interest-icon {
+    filter: grayscale(0);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-input, .form-textarea {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    color: var(--primary-text);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    background: var(--glass-hover);
+    box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+    color: var(--muted-text)
+}
+
+.form-textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
