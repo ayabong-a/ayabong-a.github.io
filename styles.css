@@ -208,6 +208,8 @@ body {
 
 .hero-subtitle {
     font-size: clamp(1.1rem, 3vw, 1.5rem);
+    color: var(--secondary-text);
+    margin-bottom: 3rem;
     font-weight: 400;
     letter-spacing: 0.025em;
     max-width: 600px;
