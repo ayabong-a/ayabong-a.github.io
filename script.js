@@ -3,6 +3,7 @@ class PortfolioApp {
         this.initializeNavBarScroll();
         this.intializeAnimations();
         this.intializeSmoothScrolling();
+        this.intializeThemeToggle();
     }
 
     initializeNavBarScroll() {
@@ -121,6 +122,31 @@ class PortfolioApp {
         };
 
         setTimeout(typeWriter, 500);
+    }
+
+    intializeThemeToggle() {
+        const themeToggle = document.getElementById('themeToggle');
+        const toggleCircle = themeToggle.querySelector('.toggle-circle');
+
+        let isDark = true;
+        
+        themeToggle.addEventListener('click', () => {
+            isDark = !isDark;
+            this.applyTheme(isDark);
+        })
+    }
+
+    applyTheme(isDark){
+        const body = document.body;
+        const toggleCircle = document.querySelector('.toggle-circle');
+
+        if(isDark) {
+            body.classList.remove('light-theme');
+            toggleCircle.style.transform = 'translateX(0)';
+        } else {
+            body.classList.add('light-theme');
+            toggleCircle.style.transform = 'translateX(26px)';
+        }
     }
 }
 

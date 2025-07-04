@@ -427,10 +427,16 @@ body {
     font-size: 1.1rem;
     padding: 1.5rem;
     background: var(--glass-bg);
-    border: 1px splid var(--glass-border);
+    border: 1px solid var(--glass-border);
     border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(10px);
+}
+
+.interest-item:hover {
+    transform: translateX(8px);
+    background: var(--glass-hover);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 .interest-icon {
