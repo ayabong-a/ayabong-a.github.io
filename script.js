@@ -2,6 +2,7 @@ class PortfolioApp {
     constructor () {
         this.initializeNavBarScroll();
         this.intializeAnimations();
+        this.intializeSmoothScrolling();
     }
 
     initializeNavBarScroll() {
@@ -14,6 +15,45 @@ class PortfolioApp {
                 navbar.classList.remove('scrolled')
             }
         })
+    }
+
+    intializeSmoothScrolling() {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const heroButtons = document.querySelectorAll('.hero-buttons .btn');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                if(targetSection) {
+                    const offsetTop = targetSection.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            })
+        });
+
+        heroButtons[0].addEventListener('click', () => {
+            const projectsSection = document.querySelector('#projects');
+            const offsetTop = projectsSection.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        });
+
+        heroButtons[1].addEventListener('click', () => {
+            const contactSection = document.querySelector('#contact');
+            const offsetTop = contactSection.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            })
+        });
     }
 
     intializeAnimations() {
