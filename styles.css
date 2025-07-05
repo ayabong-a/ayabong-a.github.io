@@ -31,21 +31,50 @@
     --brand-warning: #f59e0b;
     --brand-error: #ef4444;
 
+    /* Light Mode Brand Adjustments */
+    --light-brand-primary: #2563eb;
+    --light-brand-secondary: #dc2626;
+    --light-brand-accent: #7c3aed;
+
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, #4a9eff 0%, #7c3aed 100%);
     --gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #f59e0b 100%);
     --gradient-accent: linear-gradient(135deg, #10b981 0%, #4a9eff 100%);
+
+    /* Light Mode Gradients */
+    --light-gradient-primary: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    --light-gradient-secondary: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+    --light-gradient-accent: linear-gradient(135deg, #059669 0%, #2563eb 100%);
 
     /* Glass effect */
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-hover: rgba(255, 255, 255, 0.08);
 
+    /*Light Mode Glass */
+    --light-glass-bg: rgba(255, 255, 255, 0.8);
+    --light-glass-border: rgba(0, 0, 0, 0.08);
+    --light-glass-hover: rgba(255, 255, 255, 0.95);
+
     /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
     --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.25);
+
+    /* Light Mode Shadows */
+    --light-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --light-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --light-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --light-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme {
+    background: var(--light-primary-bg);
+    background-image: radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(124, 58, 237, 0.04) 0%, transparent 50%);
+    color: var(--light-primary-text);
 }
 
 body {
