@@ -154,3 +154,62 @@ class PortfolioApp {
 document.addEventListener('DOMContentLoaded', () => {
     new PortfolioApp();
 })
+ 
+document.addEventListener('DOMContentLoaded', () => {
+    // parallax effect to hero section
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        const rate = scrolled * -0.3;
+
+        if(hero) {
+            hero.style.transform = `translateY(${rate}px)`;
+        }
+    });
+
+    //active nav link highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    //magnetic effect to buttons
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('mousemove', (event) => {
+            const rect  = button.getBoundingClientRect();
+            const x = event.clientX - rect.left - rect.width / 2;
+            const y = event.clientY - rect.top - rect.height / 2;
+
+            button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.02)`;
+        });
+
+        button.addEventListener('mouseLeave', () => {
+            button.style.transform = 'translate(0, 0) scale(1)';
+        });
+    });
+
+    //floating animation to interest icons
+    const interestIcons = document.querySelectorAll('.interest-icon');
+    interestIcons.forEach((icon, index) => {
+        icon.style.animation = `float 3s ease-in-out infinite ${index * 0.5}s`
+    })
+})
