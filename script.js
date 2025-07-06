@@ -1,7 +1,8 @@
 class PortfolioApp {
     constructor () {
         this.initializeNavBarScroll();
-        this.intializeAnimations();
+        
+        //this.intializeAnimations();
         this.intializeSmoothScrolling();
         this.intializeThemeToggle();
     }
