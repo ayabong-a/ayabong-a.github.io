@@ -1,10 +1,10 @@
 class PortfolioApp {
     constructor () {
         this.initializeNavBarScroll();
-        
-        //this.intializeAnimations();
+        this.intializeAnimations();
         this.intializeSmoothScrolling();
         this.intializeThemeToggle();
+        this.intializeFormHandling();
     }
 
     initializeNavBarScroll() {
@@ -99,30 +99,38 @@ class PortfolioApp {
 
     addTypingEffect() {
         const heroTitle = document.querySelector('.hero-title');
-        const text = "Hi, I'm Ayabonga.";
+        const fullText = "Hi, I'm ";
         const name = "Ayabonga.";
 
         heroTitle.innerHTML = "";
 
         let i = 0;
-        const typeWriter = () => {
-            if(i < text.length) {
-                if(i === text.indexOf(name)) {
-                    heroTitle.innerHTML += '<span class="name-highlight">';
-                }
-
-                heroTitle.innerHTML += text.charAt(i);
-
-                if(i === text.length - 1) {
-                    heroTitle.innerHTML += '</span>';
-                }
-
+        const typeFullText = () => {
+            if(i < fullText.length) {
+                heroTitle.innerHTML += fullText.charAt(i);
+                
                 i++;
-                setTimeout(typeWriter, 100);
+                setTimeout(typeFullText, 100);
+            }else {
+                const nameSpan = document.createElement('span');
+                nameSpan.className = 'name-highlight';
+
+                heroTitle.appendChild(nameSpan);
+
+                let j = 0;
+                const typeName = () => {
+                    if(j < name.length) {
+                        nameSpan.innerHTML += name.charAt(j);
+                        j++;
+                        setTimeout(typeName, 100);
+                    }
+            };
+
+                setTimeout(typeName, 200);
             }
         };
 
-        setTimeout(typeWriter, 500);
+        setTimeout(typeFullText, 500);
     }
 
     intializeThemeToggle() {
@@ -149,6 +157,78 @@ class PortfolioApp {
             toggleCircle.style.transform = 'translateX(26px)';
         }
     }
+
+    intializeFormHandling() {
+        const contactForm = document.querySelector('.contact-form');
+
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const name = contactForm.querySelector('input[placeholder="Name"]').value;
+            const email = contactForm.querySelector('input[placeholder="Email"]').value;
+            const message = contactForm.querySelector('textarea').value;
+
+            if (name && email && message) {
+            try {
+                const response = await fetch('http://localhost:3000/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, message })
+                });
+
+                if (response.ok) {
+                    this.showNotification('Message sent successfully!', 'success');
+                    contactForm.reset();
+                } else {
+                    const errorData = await response.json();
+                    this.showNotification(errorData?.error || 'Something went wrong. Please try again.', 'error');
+                }
+            } catch (error) {
+                this.showNotification('Network error. Please try again later.', 'error');
+            }
+        } else {
+            this.showNotification('Please fill in all fields.', 'error');
+        }
+        });
+    }
+
+    showNotification(message, type) {
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.textContent = message;
+
+        const isLightTheme = document.body.classList.contains('light-theme');
+
+        notification.style.cssText = `
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            color: white;
+            font-weight: 500;
+            z-index: 1001;
+            transform: transalateY(400px);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: ${isLightTheme ? '0 8px 24px rgba(0, 0, 0, 0.12)' : '0 8px 24px rgba(0, 0, 0, 0.2)'};
+            ${type === 'success' ? 'background: #10b981;' : 'background: #ef4444;'}`;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+    }
+        
 }
 
 document.addEventListener('DOMContentLoaded', () => {
