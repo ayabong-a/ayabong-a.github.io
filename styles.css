@@ -598,7 +598,7 @@ body.light-theme .section-title::before {
     object-position: center;
     border-radius: 16px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: grayscale(0.2) brightness(0.9);
+    
     
 }
 
@@ -617,6 +617,87 @@ body.light-theme .profile-img:hover {
 @keyframes shimmer {
     0%, 100% { opacity: 0.5;}
     50% { opacity: 0.8;}
+}
+
+.about-content h3{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--primary-text);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+body.light-theme .about-content h3 {
+    color: var(--light-primary-text);
+}
+
+.about-description {
+    color: var(--secondary-text);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+body.light-theme .about-description {
+    color: var(--light-secondary-text);
+}
+
+.skills-section {
+    margin-top: 2.5rem;
+}
+
+.skills-section h4 {
+    color: var(--primary-text);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.025em;
+}
+
+.body.light-theme .skills-section h4 {
+    color: var(--light-primary-text);
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--secondary-text);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    initial-letter: 0.025em;
+}
+
+body.light-theme .skill-tag {
+    background: var(--light-glass-bg);
+    border: 1px solid var(--light-glass-border);
+    color: var(--light-secondary-text);
+    box-shadow: var(--light-shadow-sm);
+}
+
+.skill-tag:hover {
+    background: var(--glass-hover);
+    border-color: var(--brand-primary);
+    color: var(--primary-text);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+body.light-theme .skill-tag:hover {
+    background: var(--light-glass-hover);
+    border-color: var(--light-brand-primary);
+    color: var(--light-primary-text);
+    box-shadow: var(--light-shadow-md);
 }
 
 .glass-card {
