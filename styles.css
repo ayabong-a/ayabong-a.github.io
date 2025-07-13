@@ -655,7 +655,7 @@ body.light-theme .about-description {
     letter-spacing: 0.025em;
 }
 
-.body.light-theme .skills-section h4 {
+body.light-theme .skills-section h4 {
     color: var(--light-primary-text);
 }
 
@@ -803,7 +803,7 @@ body.light-theme .project-card:hover::after {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body.body.light-theme .project-img {
+bodybody.light-theme .project-img {
     filter: brightness(1) saturate(1);
 }
 
