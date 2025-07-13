@@ -979,13 +979,13 @@ body.light-theme .project-link:hover {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    font-size: 1.1rem;
     padding: 1.5rem;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(10px);
+    cursor: pointer;
 }
 
 body.light-theme .interest-item {
@@ -995,25 +995,79 @@ body.light-theme .interest-item {
 }
 
 .interest-item:hover {
-    transform: translateX(8px);
+    transform: translateX(8px) translateY(-2px);
     background: var(--glass-hover);
     border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: var(--shadow-lg);
 }
 
 body.light-theme .interest-item:hover {
     background: var(--light-glass-hover);
     border-color: rgba(0, 0, 0, 0.12);
-    box-shadow: var(--light-shadow-md);
+    box-shadow: var(--light-shadow-lg);
 }
 
 .interest-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.75rem;
     filter: grayscale(0.3);
     transition: filter 0.3s ease;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+body.light-theme .interest-icon {
+    background: var(--light-glass-bg);
+    border: 1px solid var(--light-glass-border);
 }
 
 .interest-item:hover .interest-icon {
     filter: grayscale(0);
+    background: var(--glass-hover);
+    border-color: var(--brand-primary);
+    transform: scale(1.05);
+}
+
+body.light-theme .interest-item:hover .interest-icon {
+    background: var(--light-glass-hover);
+    border-color: var(--light-brand-primary);
+}
+
+.interest-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.interest-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-text);
+    margin: 0;
+    letter-spacing: 0.025em;
+}
+
+body.light-theme .interest-title {
+    color: var(--light-primary-text);
+}
+
+.interest-description {
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+    margin: 0;
+    line-height: 1.5;
+}
+
+body.light-theme .interest-description {
+    color: var(--light-secondary-text);
 }
 
 .contact-form {
