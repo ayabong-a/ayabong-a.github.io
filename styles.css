@@ -341,7 +341,6 @@ body.light-theme .name-highlight{
     background-clip: text;
 }
 
-
 .name-highlight::after {
     content: '';
     position: absolute;
@@ -577,6 +576,7 @@ body.light-theme .section-title {
     width: 4px;
     height: 20px;
     background: var(--gradient-secondary);
+    border-radius: 2px;
 }
 
 body.light-theme .section-title::before {
@@ -598,12 +598,6 @@ body.light-theme .section-title::before {
     object-position: center;
     border-radius: 16px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    
-}
-
-body.light-theme .profile-img {
-    filter: grayscale(0.1) brightness(1);
 }
 
 .profile-img:hover {
@@ -611,12 +605,7 @@ body.light-theme .profile-img {
 }
 
 body.light-theme .profile-img:hover {
-    filter: grayscale(0) brightness(1.1);
-}
-
-@keyframes shimmer {
-    0%, 100% { opacity: 0.5;}
-    50% { opacity: 0.8;}
+    filter: brightness(1.1);
 }
 
 .about-content h3{
@@ -721,6 +710,7 @@ body.light-theme .glass-card {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
 }
@@ -730,14 +720,13 @@ body.light-theme .glass-card::before {
 }
 
 .glass-card:hover {
-    transform: translateY(-8px) scale(1.02);
     background: var(--glass-hover);
     border-color: rgba(255, 255, 255, 0.15);
     box-shadow: var(--shadow-xl);
 }
 
 body.light-theme .glass-card:hover {
-    background: var(--glass-hover);
+    background: var(--light-glass-hover);
     border-color: rgba(0, 0, 0, 0.12);
     box-shadow: var(--light-shadow-xl);
 }
@@ -754,11 +743,23 @@ body.light-theme .glass-card:hover {
 
 .project-card {
     padding: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card.glass-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-card:hover {
+    box-shadow: var(--shadow-xl);
+}
+
+body.light-theme .project-card:hover {
+    box-shadow: var(--light-shadow-xl);
 }
 
 .project-card::after {
@@ -801,9 +802,10 @@ body.light-theme .project-card:hover::after {
     object-fit: cover;
     object-position: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.9) saturate(1.1);
 }
 
-bodybody.light-theme .project-img {
+body.light-theme .project-img {
     filter: brightness(1) saturate(1);
 }
 
