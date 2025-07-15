@@ -750,11 +750,15 @@ body.light-theme .glass-card:hover {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-card.glass-card:hover {
-    transform: translateY(-8px);
+.project-card.glass-card {
+  margin-bottom: 24px;
+  padding: 1px;
+  transition: transform 0.4s ease-in-out, box-shadow 0.8s ease-in-out;
+  will-change: transform, box-shadow;
 }
 
-.project-card:hover {
+.project-card.glass-card:hover {
+    transform: translateY(-8px);
     box-shadow: var(--shadow-xl);
 }
 
@@ -801,7 +805,7 @@ body.light-theme .project-card:hover::after {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
     filter: brightness(0.9) saturate(1.1);
 }
 
@@ -809,7 +813,11 @@ body.light-theme .project-img {
     filter: brightness(1) saturate(1);
 }
 
-.project-card:hover .project-img {
+.glass-card:not(.project-card):hover {
+    box-shadow: var(--shadow-);
+}
+
+.project-card.glass-card:hover .project-img {
     transform: scale(1.05);
     filter: brightness(1) saturate(1.2);
 }
