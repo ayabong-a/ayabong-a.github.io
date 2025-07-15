@@ -7,11 +7,10 @@
   },
   "name": "ayabong-a.github.io",
   "version": "2.0.0",
-  "description": "go to: https://ayabong-a.github.io/",
+  "description": "This is a redesign of my personal website",
   "main": "script.js",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --watch server.js"
   },
   "repository": {
@@ -19,7 +18,7 @@
     "url": "git+https://github.com/ayabong-a/ayabong-a.github.io.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ayabonga",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ayabong-a/ayabong-a.github.io/issues"
