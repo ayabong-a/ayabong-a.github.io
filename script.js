@@ -161,7 +161,7 @@ class PortfolioApp {
 
       if (name && email && message) {
         try {
-          const response = await fetch("https://ayabonga-portfolio.up.railway.app/api/contact", {
+          const response = await fetch("https://ayabong-a-github-io.onrender.com/api/contact", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
