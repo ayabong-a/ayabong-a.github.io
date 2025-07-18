@@ -8,7 +8,7 @@
   "name": "ayabong-a.github.io",
   "version": "2.0.0",
   "description": "This is a redesign of my personal website",
-  "main": "script.js",
+  "main": "server.js",
   "devDependencies": {},
   "scripts": {
     "start": "node --watch server.js"
